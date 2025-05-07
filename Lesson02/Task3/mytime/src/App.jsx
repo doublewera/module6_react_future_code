@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import WorldMap from 'react-svg-worldmap'
+import Countdown from 'react-countdown'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,7 +18,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <WorldMap data={[]} />
+      <Countdown date={Date.now() + 30000} />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
