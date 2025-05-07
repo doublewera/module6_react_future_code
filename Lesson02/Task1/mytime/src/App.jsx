@@ -2,11 +2,23 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Countdown from 'react-countdown'
+import AnalogClock from 'analog-clock-react'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  let options = {
+    width: "300px",
+    border: true,
+    borderColor: "#2e2e2e",
+    baseColor: "#17a2b8",
+    centerColor: "#459cff",
+    centerBorderColor: "#ffffff",
+    handColors: {
+      second: "#d81c7a",
+      minute: "#ffffff",
+      hour: "#ffffff"
+    }
+};
   return (
     <>
       <div>
@@ -18,7 +30,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <Countdown date={Date.now() + 30000} />
+      <AnalogClock />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
