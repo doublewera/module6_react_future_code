@@ -1,8 +1,11 @@
-function App() {
+function whoAmI() {
+  return prompt('Как тебя зовут?')
+}
+
+export default function App() {
 
   return (
-    <p>Получилось!</p>
+    <p>Получилось! Привет, {whoAmI()}</p>
   )
 }
 
-export default App
