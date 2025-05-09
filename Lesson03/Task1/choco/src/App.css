@@ -1,0 +1,19 @@
+table {
+  border-width: 2px;
+  border-style: outset;
+  background-color: rgb(222,213,251);
+}
+
+td, th {
+  border-width: 1px;
+  background-color: white;
+  border-style: solid;
+  padding: 4px;
+}
+
+table, td, th {
+  border-color: rgb(82,38,208);
+  border-radius: 5px;
+}
+
+
