@@ -9,26 +9,20 @@ import {
   FcHome,
 } from "react-icons/fc";
 
-const icons = [
-  <FcAlarmClock   key='k1' />, 
-  <FcBinoculars   key='k2' />,
-  <FcCellPhone    key='k3' />,
-  <FcCloseUpMode  key='k4' />,
-  <FcCamcorderPro key='k5' />,
-  <FcInTransit    key='k6' />,
-  <FcLinux        key='k7' />,
-  <FcHome         key='k8' />,
-  <FcAlarmClock   key='k9' />, 
-  <FcBinoculars   key='k10' />,
-  <FcCellPhone    key='k11' />,
-  <FcCloseUpMode  key='k12' />,
-  <FcCamcorderPro key='k13' />,
-  <FcInTransit    key='k14' />,
-  <FcLinux        key='k15' />,
-  <FcHome         key='k16' />,
+const icon_funcs = [
+  FcAlarmClock, 
+  FcBinoculars,
+  FcCellPhone,
+  FcCloseUpMode,
+  FcCamcorderPro,
+  FcInTransit,
+  FcLinux,
+  FcHome,
 ];
 
+
 import './App.css'
+import React from "react";
 
 function randint(maxn) {
   return parseInt(Math.random() * (maxn - 1)).toFixed();
@@ -46,6 +40,13 @@ function shuffle(arr) {
 }
 
 function Tds(props) {
+  let icons = [];
+  for (let i=0;i<8;i++) {
+    icons.push(React.createElement(
+      icon_funcs[i], {key: 'k' + (i*2)}))
+    icons.push(React.createElement(
+      icon_funcs[i], {key: 'k' + (i*2 + 1)}))
+  }
   let tds = [];
   for (let c of props.cells)
       tds.push(<td key={icons[c].key + 'td'}>{icons[c]}</td>);
